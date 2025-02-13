@@ -33,4 +33,19 @@ defmodule Appointments.CustomersFixtures do
 
     service
   end
+
+  @doc """
+  Generate a appointment.
+  """
+  def appointment_fixture(attrs \\ %{}) do
+    {:ok, appointment} =
+      attrs
+      |> Enum.into(%{
+        appointment_time: ~U[2025-02-12 20:47:00Z],
+        customer_name: "some customer_name"
+      })
+      |> Appointments.Customers.create_appointment()
+
+    appointment
+  end
 end

@@ -20,6 +20,11 @@ defmodule AppointmentsWeb.Router do
     get "/", PageController, :home
   end
 
+  scope "/api", AppointmentsWeb do
+    pipe_through :api
+    get "/appointments/:id", AppointmentController, :show
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AppointmentsWeb do
   #   pipe_through :api
