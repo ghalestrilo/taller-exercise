@@ -18,6 +18,8 @@ defmodule AppointmentsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/appointments", AppointmentsLive
   end
 
   scope "/api", AppointmentsWeb do
