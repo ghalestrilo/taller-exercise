@@ -1,5 +1,7 @@
 # Appointments
 
+To start the database, run the command `docker-compose up db`. This is a very practical way of running a postgres instance in a way the API can connect to it for the development environment.
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
