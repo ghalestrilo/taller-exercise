@@ -18,4 +18,19 @@ defmodule Appointments.CustomersFixtures do
 
     salon
   end
+
+  @doc """
+  Generate a service.
+  """
+  def service_fixture(attrs \\ %{}) do
+    {:ok, service} =
+      attrs
+      |> Enum.into(%{
+        name: "some name",
+        price: "120.5"
+      })
+      |> Appointments.Customers.create_service()
+
+    service
+  end
 end
